@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
+    "prebuild": "scripts/wrapper.local.sh",
     "build": "vue-cli-service build",
     "serve": "http-server ./dist"
   },
