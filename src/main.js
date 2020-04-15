@@ -5,6 +5,7 @@ import App from './components/app.vue'
 import Config from './Config'
 import {configureApi} from './GitLabApi'
 import axios from 'axios'
+import lendboxConfig from './lendbox-config';
 
 const finish = () => {
   if (Config.isConfigured) {
@@ -28,8 +29,8 @@ const finish = () => {
 // Load bundled config, if present.
 ;(async () => {
   try {
-    const {data} = await axios.get('./config.json')
-    Config.load(data)
+    // const {data} = await axios.get('./config.json')
+    Config.load(lendboxConfig)
   } catch (e) {
     Config.load()
   } finally {
